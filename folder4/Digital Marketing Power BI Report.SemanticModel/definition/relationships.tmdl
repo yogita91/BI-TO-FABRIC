@@ -1,0 +1,20 @@
+relationship 946490bd-1fd2-4254-87d1-1fed27198608
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Ad Budget'.Date
+	toColumn: LocalDateTable_7fbdbfa9-f910-4457-b087-c51efea90492.Date
+
+relationship e67ddb5b-1905-4110-b687-5295caba9c1d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Data.Date
+	toColumn: LocalDateTable_e2fc23a3-e11e-4a48-a5b1-22ce811fd547.Date
+
+relationship f70be6e1-74e3-44e1-9f76-2a33a7eb7531
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sales Target'.Date
+	toColumn: LocalDateTable_37585dfc-a99e-405c-9280-ab5a01556d6a.Date
+
+relationship 14a83ea5-9c4c-4f2f-bd6a-0201f5005603
+	joinOnDateBehavior: datePartOnly
+	fromColumn: 'Sales Details'.'Sales Date'
+	toColumn: LocalDateTable_0a41119f-f528-408f-9386-12e4ba4e83d4.Date
+

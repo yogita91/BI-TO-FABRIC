@@ -1,0 +1,30 @@
+model Model
+	culture: en-IN
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Ad Budget","Click Cost","Data","Impression Cost","Sales Target","Sales Details"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.140.1577.0 (25.02)+00af0910c5ca19a229c472b0dfc17a2c488f6b0a
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table 'Ad Budget'
+ref table DateTableTemplate_4f6eb731-bffd-4075-8d50-639845771a19
+ref table LocalDateTable_7fbdbfa9-f910-4457-b087-c51efea90492
+ref table 'Click Cost'
+ref table Data
+ref table LocalDateTable_e2fc23a3-e11e-4a48-a5b1-22ce811fd547
+ref table 'Impression Cost'
+ref table 'Sales Target'
+ref table LocalDateTable_37585dfc-a99e-405c-9280-ab5a01556d6a
+ref table 'Sales Details'
+ref table LocalDateTable_0a41119f-f528-408f-9386-12e4ba4e83d4
+
+ref cultureInfo en-IN
+

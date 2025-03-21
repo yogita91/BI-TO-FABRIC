@@ -1,0 +1,216 @@
+table 'Sales Details'
+	lineageTag: 2284064a-3aa3-49cf-b1ca-4e5c455bc51b
+
+	column 'Sales No'
+		dataType: int64
+		formatString: 0
+		lineageTag: 98bb1919-a884-4ece-b423-c3427c3d9419
+		summarizeBy: sum
+		sourceColumn: Sales No
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'First Name'
+		dataType: string
+		lineageTag: 1e83282f-ea84-4883-8b22-59f5ec47d6a8
+		summarizeBy: none
+		sourceColumn: First Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Name'
+		dataType: string
+		lineageTag: a5edc7d1-71a9-4310-811b-a9a8ce1a2c6e
+		summarizeBy: none
+		sourceColumn: Last Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0fa48f75-e94c-4258-a8db-8468d89147c5
+		summarizeBy: none
+		sourceColumn: Sales Date
+
+		variation Variation
+			isDefault
+			relationship: 14a83ea5-9c4c-4f2f-bd6a-0201f5005603
+			defaultHierarchy: LocalDateTable_0a41119f-f528-408f-9386-12e4ba4e83d4.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Sales Channel'
+		dataType: string
+		lineageTag: 4da8dca4-ca88-464a-857a-c38f010aa1c2
+		summarizeBy: none
+		sourceColumn: Sales Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Channel Type'
+		dataType: string
+		lineageTag: 39170865-b551-4497-b5b1-e3cb9954eef9
+		summarizeBy: none
+		sourceColumn: Channel Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country/Territory
+		dataType: string
+		lineageTag: 2d5219c7-f584-4eb4-9124-39807882428c
+		summarizeBy: none
+		sourceColumn: Country/Territory
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Geographic Region'
+		dataType: string
+		lineageTag: 2dc7abbd-d75e-4acd-a62f-0650f2a0dc90
+		summarizeBy: none
+		sourceColumn: Geographic Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Name'
+		dataType: string
+		lineageTag: 3eaec62d-46ec-4a44-af3d-025d77bdbae4
+		summarizeBy: none
+		sourceColumn: Product Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Category'
+		dataType: string
+		lineageTag: 98e19b54-1030-48ae-8605-6a6b9921c2a2
+		summarizeBy: none
+		sourceColumn: Product Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Class'
+		dataType: string
+		lineageTag: d55b5e1a-d623-4630-8ccb-7215483166c2
+		summarizeBy: none
+		sourceColumn: Product Class
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 82fd7536-1d27-4981-b79c-cd4681bcd8ec
+		summarizeBy: sum
+		sourceColumn: Cost Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sale Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 23655215-ff49-4845-94fb-12816e5cad00
+		summarizeBy: sum
+		sourceColumn: Sale Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discount Type'
+		dataType: string
+		lineageTag: ee3194d7-a8df-4148-a663-0583c8254e98
+		summarizeBy: none
+		sourceColumn: Discount Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Discount Percentage'
+		dataType: double
+		lineageTag: ef75b103-ec4e-4fcb-925c-a8fc407c37fa
+		summarizeBy: sum
+		sourceColumn: Discount Percentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Discounted Sale Price'
+		dataType: double
+		lineageTag: 4c5145da-8da3-4455-b041-63d279fb190f
+		summarizeBy: sum
+		sourceColumn: Discounted Sale Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: f93fc76e-3d4a-4059-b4d3-3edde6e59fa8
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Cost Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: d28d29a6-7a61-4533-80e4-139b6787ad6f
+		summarizeBy: sum
+		sourceColumn: Total Cost Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Sale Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: a5f00055-77e2-4d62-be67-58f10c74a7aa
+		summarizeBy: sum
+		sourceColumn: Total Sale Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Discounted Sale Price'
+		dataType: double
+		lineageTag: c6c51011-3098-4b17-a524-b272a5e3b49a
+		summarizeBy: sum
+		sourceColumn: Total Discounted Sale Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit/Loss
+		dataType: double
+		lineageTag: 687c628c-a6ca-42e8-8ae0-7c98854746b8
+		summarizeBy: sum
+		sourceColumn: Profit/Loss
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Profit Percentage'
+		dataType: double
+		lineageTag: a44d2b1a-fa01-473a-8576-b1fa42221422
+		summarizeBy: sum
+		sourceColumn: Profit Percentage
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Sales Details' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\lenoovo\Downloads\TEXT Functions.xlsx"), null, true),
+				    #"Sales Details_Sheet" = Source{[Item="Sales Details",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Sales Details_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Sales No", Int64.Type}, {"First Name", type text}, {"Last Name", type text}, {"Sales Date", type date}, {"Sales Channel", type text}, {"Channel Type", type text}, {"Country/Territory", type text}, {"Geographic Region", type text}, {"Product Name", type text}, {"Product Category", type text}, {"Product Class", type text}, {"Cost Price", Int64.Type}, {"Sale Price", Int64.Type}, {"Discount Type", type text}, {"Discount Percentage", type number}, {"Discounted Sale Price", type number}, {"Quantity", Int64.Type}, {"Total Cost Price", Int64.Type}, {"Total Sale Price", Int64.Type}, {"Total Discounted Sale Price", type number}, {"Profit/Loss", type number}, {"Profit Percentage", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,43 @@
+table 'Click Cost'
+	lineageTag: f3ea81e7-b8dc-4b93-a72f-1fe0fbba9da9
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 2668db6b-ac1e-4f62-bc28-d507e4434218
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Platform
+		dataType: string
+		lineageTag: 04e1568f-675e-46f6-a796-f563c40d4155
+		summarizeBy: none
+		sourceColumn: Platform
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Per Click (CPC)'
+		dataType: double
+		lineageTag: 4c450510-cad0-4526-b692-e3ec064dc76b
+		summarizeBy: sum
+		sourceColumn: Cost Per Click (CPC)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Click Cost' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\lenoovo\Downloads\Digital Marketing Dataset.xlsx"), null, true),
+				    #"Click Cost_Sheet" = Source{[Item="Click Cost",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Click Cost_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Year", Int64.Type}, {"Platform", type text}, {"Cost Per Click (CPC)", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

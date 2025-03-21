@@ -1,0 +1,43 @@
+table 'Impression Cost'
+	lineageTag: 1d05c2c0-4319-450b-9cc5-2d8159b2ebf2
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: b47aebda-ddd5-434e-b74b-805b96facafc
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Platform
+		dataType: string
+		lineageTag: 996fd31d-0856-4f2b-9514-57a1c37f2953
+		summarizeBy: none
+		sourceColumn: Platform
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Cost Per 1000 Impression (CPM)'
+		dataType: double
+		lineageTag: d502af89-a231-4d17-b7a8-6f0c92841d41
+		summarizeBy: sum
+		sourceColumn: Cost Per 1000 Impression (CPM)
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Impression Cost' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\lenoovo\Downloads\Digital Marketing Dataset.xlsx"), null, true),
+				    #"Impression Cost_Sheet" = Source{[Item="Impression Cost",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Impression Cost_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Year", Int64.Type}, {"Platform", type text}, {"Cost Per 1000 Impression (CPM)", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

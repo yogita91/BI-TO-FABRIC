@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Digital Marketing Power BI Report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "d3ea66ba-48bb-be00-45b5-9940e844277e"
+  }
+}

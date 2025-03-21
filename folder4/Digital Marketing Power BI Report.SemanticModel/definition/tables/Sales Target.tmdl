@@ -1,0 +1,41 @@
+table 'Sales Target'
+	lineageTag: c4e4feed-2a4b-4405-94a0-4e9f7be15040
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b7112115-d7d6-45cb-8afa-109dfa34f1bc
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: f70be6e1-74e3-44e1-9f76-2a33a7eb7531
+			defaultHierarchy: LocalDateTable_37585dfc-a99e-405c-9280-ab5a01556d6a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Sales Target '
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f006c28-8e27-479d-87e9-0705adddd680
+		summarizeBy: sum
+		sourceColumn: "Sales Target "
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Sales Target' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\lenoovo\Downloads\Digital Marketing Dataset.xlsx"), null, true),
+				    #"Sales Target_Sheet" = Source{[Item="Sales Target",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Sales Target_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}, {"Sales Target ", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

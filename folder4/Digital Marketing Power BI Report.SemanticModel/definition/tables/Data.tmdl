@@ -1,0 +1,209 @@
+table Data
+	lineageTag: 199e35ac-a0ff-4b4b-b81d-f5db6fa7eb18
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: ef144e69-ee51-4262-b9e7-f8b8567cdcd0
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: e67ddb5b-1905-4110-b687-5295caba9c1d
+			defaultHierarchy: LocalDateTable_e2fc23a3-e11e-4a48-a5b1-22ce811fd547.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Month
+		dataType: string
+		lineageTag: ba0b95e3-e48a-4f43-aabf-6ed1802dd924
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 49a07545-b801-43c5-92e6-9d0cf7ecaf1a
+		summarizeBy: sum
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ad Campaign'
+		dataType: string
+		lineageTag: 06f29c47-a9f7-4da5-89cc-caf19398909a
+		summarizeBy: none
+		sourceColumn: Ad Campaign
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Display ads'
+		dataType: double
+		lineageTag: b2c18c43-9bf1-40a8-bafd-b6f12713dcec
+		summarizeBy: sum
+		sourceColumn: Display ads
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Overlay ads'
+		dataType: double
+		lineageTag: 42c076b6-730d-41c1-b47f-dc42d4319ef0
+		summarizeBy: sum
+		sourceColumn: Overlay ads
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Skippable ads'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4b6acd80-ceb0-4458-9a2a-b6e1de509cdd
+		summarizeBy: sum
+		sourceColumn: Skippable ads
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Non-skippable ads'
+		dataType: double
+		lineageTag: 24286297-c4fa-4637-89dc-9b34bf443a30
+		summarizeBy: sum
+		sourceColumn: Non-skippable ads
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Bumper ads'
+		dataType: double
+		lineageTag: 4eaf34b4-b2ad-45e1-aa10-64a8dd94b1bd
+		summarizeBy: sum
+		sourceColumn: Bumper ads
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Platform
+		dataType: string
+		lineageTag: b293b398-a7be-44af-8103-ff8e22a8aba5
+		summarizeBy: none
+		sourceColumn: Platform
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Avg Pages Visited'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9979b4b1-d0b9-4e83-8f91-13d35a5b5e28
+		summarizeBy: sum
+		sourceColumn: Avg Pages Visited
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'AVG Time on Site (mins)'
+		dataType: int64
+		formatString: 0
+		lineageTag: b55729b1-6798-4363-92f6-0337a5153c94
+		summarizeBy: sum
+		sourceColumn: AVG Time on Site (mins)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Impressions '
+		dataType: int64
+		formatString: 0
+		lineageTag: 757c481f-1bd0-476c-ae08-989518b9f495
+		summarizeBy: sum
+		sourceColumn: "Impressions "
+
+		annotation SummarizationSetBy = Automatic
+
+	column Clicks
+		dataType: double
+		lineageTag: 6ea3f776-98ff-4e84-9165-f53faf4c435c
+		summarizeBy: sum
+		sourceColumn: Clicks
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Conversions
+		dataType: double
+		lineageTag: 6e7548cb-8276-4020-a52b-3942d874de30
+		summarizeBy: sum
+		sourceColumn: Conversions
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Quantity Sold'
+		dataType: double
+		lineageTag: b2cb4e5f-890c-4032-ba80-dea9eb7e1c07
+		summarizeBy: sum
+		sourceColumn: Quantity Sold
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Unit Cost Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 33458447-9233-489e-90b9-b51c4e4ae1cd
+		summarizeBy: sum
+		sourceColumn: Unit Cost Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unit Sale Price'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1c999b16-9412-4ec9-b4eb-e3305fb69a1c
+		summarizeBy: sum
+		sourceColumn: Unit Sale Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Final Cost Price'
+		dataType: double
+		lineageTag: d7ebaaf5-b1f9-42ee-9650-19080bc42414
+		summarizeBy: sum
+		sourceColumn: Final Cost Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Final Sale Price'
+		dataType: double
+		lineageTag: cb4362db-4083-4eb7-a15e-17d9fd6990ad
+		summarizeBy: sum
+		sourceColumn: Final Sale Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Data = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\lenoovo\Downloads\Digital Marketing Dataset.xlsx"), null, true),
+				    Data_Sheet = Source{[Item="Data",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Data_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}, {"Month", type text}, {"Year", Int64.Type}, {"Ad Campaign", type text}, {"Display ads", type number}, {"Overlay ads", type number}, {"Skippable ads", Int64.Type}, {"Non-skippable ads", type number}, {"Bumper ads", type number}, {"Platform", type text}, {"Avg Pages Visited", Int64.Type}, {"AVG Time on Site (mins)", Int64.Type}, {"Impressions ", Int64.Type}, {"Clicks", type number}, {"Conversions", type number}, {"Quantity Sold", type number}, {"Unit Cost Price", Int64.Type}, {"Unit Sale Price", Int64.Type}, {"Final Cost Price", type number}, {"Final Sale Price", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

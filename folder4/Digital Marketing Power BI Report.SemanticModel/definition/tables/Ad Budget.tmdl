@@ -1,0 +1,41 @@
+table 'Ad Budget'
+	lineageTag: d6baadae-1438-434a-9aeb-26ef9c0cf709
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 6f65a26a-4522-47bc-9ac4-dc719baba656
+		summarizeBy: none
+		sourceColumn: Date
+
+		variation Variation
+			isDefault
+			relationship: 946490bd-1fd2-4254-87d1-1fed27198608
+			defaultHierarchy: LocalDateTable_7fbdbfa9-f910-4457-b087-c51efea90492.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Ad Budget'
+		dataType: int64
+		formatString: 0
+		lineageTag: f66c0d08-f662-4fe8-9c22-719c0d5e45a2
+		summarizeBy: sum
+		sourceColumn: Ad Budget
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Ad Budget' = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\lenoovo\Downloads\Digital Marketing Dataset.xlsx"), null, true),
+				    #"Ad Budget_Sheet" = Source{[Item="Ad Budget",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Ad Budget_Sheet", [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}, {"Ad Budget", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
